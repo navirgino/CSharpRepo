@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/Space Shooter Pro/Library
+/Space Shooter Pro/ProjectSettings
+/Space Shooter Pro/Temp
