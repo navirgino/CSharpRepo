@@ -28,7 +28,7 @@ public class NewBehaviourScript : MonoBehaviour //means inherets or extends to m
         transform.Translate(direction * _speed * Time.deltaTime);
 
         //test comment for git
-        //anotha one
+        
         
     }
 }
