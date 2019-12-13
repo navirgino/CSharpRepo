@@ -1,6 +1,9 @@
 # c-sharp-scripts
-Repo for scripts for objects in Unity C#
+Repo for scripts for Unity #
+(Will update my status on things I have learned down below: )
 
-1. Practicing/learning game development, using Unity and Visual Studios
+- To practice/learn game development--using foreign tools like C#, Unity, and Visual Studios--I independently learned how to link Github to VS on Windows. Good practice.
+
+
 
 ~ we all gotta start somewhere, right? ~
