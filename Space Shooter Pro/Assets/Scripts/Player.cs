@@ -21,6 +21,11 @@ public class Player : MonoBehaviour //means inherets or extends to monobehavior
     // Update is called once per frame
     void Update()
     {
+        CalculateMovement();
+    }
+
+        void CalculateMovement()
+        {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
@@ -28,19 +33,22 @@ public class Player : MonoBehaviour //means inherets or extends to monobehavior
 
         transform.Translate(direction * _speed * Time.deltaTime);
 
-        if (transform.position.y >= 0)
-        {
-            //making new vector object upon the transformatio when y is greater or equal to 0
-            transform.position = new Vector3(transform.position.x, 0, 0);
+        //if (transform.position.y >= 0)
+        //{
+        //    //making new vector object upon the transformatio when y is greater or equal to 0
+        //    transform.position = new Vector3(transform.position.x, 0, 0);
 
 
-        }
-        else if (transform.position.y <= -3.8f)
-        {
-            //making new vector obj upon the transformation when x is less than or equal to -3.8f on the x axis
-            transform.position = new Vector3(transform.position.x, -3.8f, 0);
+        //}
+        //else if (transform.position.y <= -3.8f)
+        //{
+        //    //making new vector obj upon the transformation when x is less than or equal to -3.8f on the x axis
+        //    transform.position = new Vector3(transform.position.x, -3.8f, 0);
 
-        }
+        //}
+
+        //clamps trans.pos.y between -3.8 and zero, making the above conditional optional
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.8f, 0), 0);
 
         //setting boundaries to wrap on the x axis!
         if (transform.position.x > 11.3f)
@@ -51,8 +59,6 @@ public class Player : MonoBehaviour //means inherets or extends to monobehavior
         {
             transform.position = new Vector3(11.3f, transform.position.y, 0);
         }
-
-
 
 
     }
