@@ -22,6 +22,12 @@ public class Player : MonoBehaviour //means inherets or extends to monobehavior
     void Update()
     {
         CalculateMovement();
+        //if i hit the space key
+        // i want to shoot the prefab
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Space key pressed");
+        }
     }
 
         void CalculateMovement()
@@ -37,8 +43,6 @@ public class Player : MonoBehaviour //means inherets or extends to monobehavior
         //{
         //    //making new vector object upon the transformatio when y is greater or equal to 0
         //    transform.position = new Vector3(transform.position.x, 0, 0);
-
-
         //}
         //else if (transform.position.y <= -3.8f)
         //{
