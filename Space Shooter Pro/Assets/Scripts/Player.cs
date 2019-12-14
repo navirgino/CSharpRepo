@@ -11,6 +11,8 @@ public class Player : MonoBehaviour //means inherets or extends to monobehavior
     //or private only user knows variable exists reference
     [SerializeField]
     private float _speed = 5.5f;
+    [SerializeField]
+    public GameObject _laserPrefab;
     void Start()
     {
         //take the current position - new position (0x, 0y, 0z)
@@ -27,6 +29,8 @@ public class Player : MonoBehaviour //means inherets or extends to monobehavior
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Space key pressed");
+            //quaternion.identity = default rotation
+            Instantiate(_laserPrefab, transform.position, Quaternion.identity);
         }
     }
 
