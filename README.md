@@ -1,4 +1,4 @@
-# c-sharp-scripts
+# c-sharp-scripts-unity
 Repo for scripts for Unity
 
 (Will update my status on things I have learned down below: )
