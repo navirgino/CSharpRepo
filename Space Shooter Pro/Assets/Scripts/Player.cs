@@ -12,7 +12,10 @@ public class Player : MonoBehaviour //means inherets or extends to monobehavior
     [SerializeField]
     private float _speed = 5.5f;
     [SerializeField]
-    public GameObject _laserPrefab;
+    private GameObject _laserPrefab;
+    [SerializeField]
+    private float _fireRate = 0.2f;
+    private float _canFire = -1f;
     void Start()
     {
         //take the current position - new position (0x, 0y, 0z)
@@ -24,15 +27,11 @@ public class Player : MonoBehaviour //means inherets or extends to monobehavior
     void Update()
     {
         CalculateMovement();
-        //if i hit the space key
-        // i want to shoot the prefab
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && Time.time > _canFire)
         {
-            Debug.Log("Space key pressed");
-            Vector3 offset = new Vector3(0, 1.0f, 0);
-            //quaternion.identity = default rotation
-            Instantiate(_laserPrefab, transform.position + offset, Quaternion.identity);
+            FireLaser();
         }
+        
     }
 
         void CalculateMovement()
@@ -57,6 +56,17 @@ public class Player : MonoBehaviour //means inherets or extends to monobehavior
             transform.position = new Vector3(11.3f, transform.position.y, 0);
         }
 
+        
 
+    }
+    void FireLaser()
+    {
+
+            _canFire = Time.time + _fireRate;
+            //new vector3 for offset
+            Vector3 offset = new Vector3(0, 1.0f, 0);
+            //quaternion.identity = default rotation
+            Instantiate(_laserPrefab, transform.position + offset, Quaternion.identity);
+      
     }
 }
