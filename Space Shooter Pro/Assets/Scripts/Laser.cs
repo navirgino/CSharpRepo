@@ -18,18 +18,23 @@ public class Laser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CalcMovement(); 
+        CalcMovement();
+        DestroyLaser();
     }
     void CalcMovement()
     {
         //translate laser up
         transform.Translate(Vector3.up * _speed * Time.deltaTime);
 
+    }
+    void DestroyLaser()
+    {
         //if laser position is greater than 8 on the y
         //destroy the obj
-        if(transform.position.y >= 7.0f)
+        if (transform.position.y >= 7.0f)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
+ 
