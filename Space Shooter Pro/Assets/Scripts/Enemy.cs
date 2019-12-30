@@ -27,15 +27,18 @@ public class Enemy : MonoBehaviour
             transform.position = new Vector3(randomX, 7, 0);
           
         }
-        //respawn at top
-
-        //if bottom of screen
-        //respawn at top with a new random x position
-    }
-    void respAtTop()
-    {
         
-        Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
-
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Hit " + other.transform.name);
+        //if other is Player
+        //damage the player
+        //destroy us
+
+        //if other is laser
+        //laser
+        //destroy us
+    }
+
 }
