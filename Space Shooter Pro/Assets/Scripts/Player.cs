@@ -16,6 +16,9 @@ public class Player : MonoBehaviour //means inherets or extends to monobehavior
     [SerializeField]
     private float _fireRate = 0.2f;
     private float _canFire = -1f;
+    [SerializeField]
+    private int _lives = 3;
+
     void Start()
     {
         //take the current position - new position (0x, 0y, 0z)
@@ -33,6 +36,7 @@ public class Player : MonoBehaviour //means inherets or extends to monobehavior
         }
         
     }
+ 
 
         void CalculateMovement()
         {
@@ -68,5 +72,17 @@ public class Player : MonoBehaviour //means inherets or extends to monobehavior
             //quaternion.identity = default rotation
             Instantiate(_laserPrefab, transform.position + offset, Quaternion.identity);
       
+    }
+
+    public void Damage()
+    {
+        _lives--;
+
+        //check if dead
+        //if so, destroy us
+        if(_lives < 1)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
