@@ -32,24 +32,19 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Hit " + other.transform.name);
-        //if other is Player
+
         if (other.tag == "Player")
-        {
-            //damage the player
+        {        
             Player player = other.transform.GetComponent<Player>();
 
             //null checking
             if (player != null)
             {
                 player.Damage();
+                Debug.Log("damaged");
             }
           
-            Debug.Log("damaged");
-
-     
-
-            //destroy us
-        
+           
             Destroy(this.gameObject);
 
 

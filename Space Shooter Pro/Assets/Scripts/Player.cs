@@ -78,8 +78,6 @@ public class Player : MonoBehaviour //means inherets or extends to monobehavior
     {
         _lives--;
 
-        //check if dead
-        //if so, destroy us
         if(_lives < 1)
         {
             Destroy(this.gameObject);
