@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 4
-  _enemyPrefab: {fileID: 0}
+  _enemyPrefab: {fileID: 804897408086299653}
 --- !u!54 &54596792193649516
 Rigidbody:
   m_ObjectHideFlags: 0
